@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css"
+    />
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 95vh;
+      }
+      a {
+        margin-top: 10px;
+      }
+      button {
+        background-color: dodgerblue;
+        color: white;
+        font-size: 16px;
+        border: 0;
+        outline: 0;
+        padding: 8px;
+        border-radius: 10px;
+        box-shadow: 0px 5px #ccc;
+      }
+      .glob {
+        width: 12px;
+      }
+      h4 {
+        letter-spacing: 2px;
+      }
+    </style>
+    <title>J Pay</title>
+  </head>
+  <body>
+    <h1>Welcome to J Pay</h1>
+    <br />
+    <h4>A Fastest Growing Moneytransfer Platform</h4>
+    <h6>
+      Over 6M Users Around The Globe
+      <img class="glob" src="Image/planet-earth.png" alt="" />
+    </h6>
+    <br />
+    <form method="post" action="" onsubmit="return getAmt()">
+      Enter Amount: <input type="number" name="amt" id="amt" required />
+      <a class="button" href="">Pay your bill</a>
+    </form>
+    <script>
+      function getAmt() {
+        let amt = document.getElementById("amt").value;
+        window.location.href = `/api/qrcode?am=${amt}`;
+        return false;
+      }
+    </script>
+  </body>
+</html>
