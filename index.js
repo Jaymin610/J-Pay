@@ -3,7 +3,7 @@ const qrcode = require("qrcode");
 let path = require("path");
 let app = express();
 str = __dirname;
-pathstr = str + "/main.html";
+pathstr = str + "\\main.html";
 
 app.get("/", (req, res) => {
   res.sendFile(pathstr);
