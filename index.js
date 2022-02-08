@@ -63,5 +63,5 @@ app.get("/api/qrcode", (req, res) => {
     }
   );
 });
-let portNumber = process.env.PORT || 3000;
+let portNumber = process.env.PORT || port;
 app.listen(portNumber, () => console.log("Connected"));
