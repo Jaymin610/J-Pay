@@ -2,9 +2,8 @@ const express = require("express");
 const qrcode = require("qrcode");
 let path = require("path");
 let app = express();
-str = __dirname;
-pathstr = str + "\\main.html";
-
+pathstr = path.join(__dirname, "/main.html");
+console.log(pathstr);
 app.get("/", (req, res) => {
   res.sendFile(pathstr);
 });
@@ -63,5 +62,6 @@ app.get("/api/qrcode", (req, res) => {
     }
   );
 });
-let portNumber = process.env.PORT || port;
+let portNumber = process.env.PORT || 3000;
+
 app.listen(portNumber, () => console.log("Connected"));
